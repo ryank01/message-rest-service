@@ -6,7 +6,8 @@ database which is included with the python standard library.
 
 
 ## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. \
+```git clone git@github.com:ryank01/message-rest-service.git``` 
 
 ## Sqlite3 schema
 |Field  |Type |Description  |
@@ -144,5 +145,24 @@ and 0 indicating the message was not previously fetched.
          ]
       }
       
-    
+### Delete a message
+Remove a message from the database \
+Example: \
+```curl -i -X DELETE http://127.0.0.1:5000/sms-service/api/v1.0/messages/<message_id>```
+
+Response: 
+```
+HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 43
+Server: Werkzeug/0.14.1 Python/3.6.7
+Date: Wed, 13 Feb 2019 04:50:03 GMT
+
+{
+  "msg": "Record successfully deleted"
+}
+
+```
+
+
    
