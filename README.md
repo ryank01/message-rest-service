@@ -128,10 +128,9 @@ and 0 indicating the message was not previously fetched.
   Example: \
     ```
     ~sms-app$ curl -X GET http://127.0.0.1:5000/sms-service/api/v1.0/messages/<message_id>
-    ```\
+    ```
     
    Response: \
-     ```
      
       {
         "messages": [
@@ -145,5 +144,5 @@ and 0 indicating the message was not previously fetched.
          ]
       }
       
-    ```
+    
    
