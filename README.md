@@ -117,7 +117,7 @@ and 0 indicating the message was not previously fetched.
           "date_created": "2019-02-13 08:17:27.516070",
           "fetched": 0,
           "identifier": "marci@scioncapital.com",
-          "message_body": "I need a cds",
+          "message_body": "I need a cds"
         }
       ]
     }
@@ -125,5 +125,25 @@ and 0 indicating the message was not previously fetched.
   ```
   
   ##### Retrieve a single message
-  
+  Example: \
+    ```
+    ~sms-app$ curl -X GET http://127.0.0.1:5000/sms-service/api/v1.0/messages/<message_id>
+    ```\
+    
+   Response: \
+     ```
+     
+      {
+        "messages": [
+          {
+            "ID": 5,
+            "date_created": "2019-02-13 08:17:27.516070",
+            "fetched": 1,
+            "identifier": "ryan@scioncaptial.com",
+            "message_body": "buying an option"
+          }
+         ]
+      }
+      
+    ```
    
