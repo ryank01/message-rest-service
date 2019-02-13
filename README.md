@@ -49,8 +49,8 @@ Example:
    > -X POST -d '{"identifier":"testingservice@email.com","message_body":"hello world"}' \
    > http://127.0.0.1:5000/sms-service/api/v1.0/messages
   ```
-  Response: \
-    ```
+  Response: 
+  ```
       HTTP/1.0 200 OK
   Content-Type: application/json
   Content-Length: 41
@@ -59,7 +59,8 @@ Example:
   {
     "msg": "Record successfully added"
   }
-    ```
+  
+  ```
     
 #### Retrieving messages
 There are three ways of retrieving messages, you can retrieve all messages including the ones previously fetched ordered by time
