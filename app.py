@@ -38,7 +38,9 @@ def create_message():
 
 @app.route('/sms-service/api/v1.0/messages', methods=['GET'])
 def get_messages():
+    '''Retrieve messages from database'''
     if request.json:
+        # fetch messages ordered by time according to start stop index
         try:
             start = request.json['start']
             stop = request.json['stop']
@@ -46,7 +48,7 @@ def get_messages():
             con = sql.connect("database.db")
             con.row_factory = sql.Row
             cur = con.cursor()
-            #cur.execute("UPDATE messages SET fetched = 1")
+
             cur.execute("SELECT * FROM messages ORDER BY datetime(date_created) DESC")
             messages =  [{j: i[j] for j in i.keys()} for i in cur.fetchall()]
             con.commit()
@@ -55,6 +57,7 @@ def get_messages():
         except Exception as e:
             return jsonify({'error': str(e)})
     else:
+        # fetch messages not previously fetched
         con = sql.connect("database.db")
         con.row_factory = sql.Row
         cur = con.cursor()
