@@ -46,7 +46,7 @@ def get_messages():
             con = sql.connect("database.db")
             con.row_factory = sql.Row
             cur = con.cursor()
-            cur.execute("UPDATE messages SET fetched = 1")
+            #cur.execute("UPDATE messages SET fetched = 1")
             cur.execute("SELECT * FROM messages ORDER BY datetime(date_created) DESC")
             messages =  [{j: i[j] for j in i.keys()} for i in cur.fetchall()]
             con.commit()
