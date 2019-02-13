@@ -27,6 +27,12 @@ cd ~/sms-app$
 ~/sms-app$ source env/bin/activate
 ```
 The above will enable the python virtualenv which will allow testing to begin.
+#### NOTE
+The database is already populated with data, if you would like to have a fresh db run
+```
+~/sms-app$ python3 sqlite.py
+```
+before starting the flask webserver, this will ensure you have an unpopulated db.
 
 
 ## Running the tests
