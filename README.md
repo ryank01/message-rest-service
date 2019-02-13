@@ -130,7 +130,7 @@ and 0 indicating the message was not previously fetched.
     ~sms-app$ curl -X GET http://127.0.0.1:5000/sms-service/api/v1.0/messages/<message_id>
     ```
     
-   Response: \
+   Response: 
      
       {
         "messages": [
